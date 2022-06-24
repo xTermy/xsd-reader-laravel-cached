@@ -29,7 +29,7 @@ class UrlUtils
         ) {
             return $base.$rel;
         }
-
+        
         return static::resolveRelativeUrlAfterEarlyChecks($base, $rel);
     }
 

@@ -37,6 +37,7 @@ use CollectHouse\XML\XSDReader\Schema\Type\ComplexType;
 use CollectHouse\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use CollectHouse\XML\XSDReader\Schema\Type\SimpleType;
 use CollectHouse\XML\XSDReader\Schema\Type\Type;
+use CollectHouse\XML\XSDReader\Utils\SchemaFileUtils;
 use CollectHouse\XML\XSDReader\Utils\UrlUtils;
 
 class SchemaReader
@@ -274,7 +275,7 @@ class SchemaReader
                         $callback = $this->loadAttributeGroup($schema, $childNode);
                         break;
                     case 'include':
-                    case 'import':
+                    case 'import'://TODO
                         $callback = $this->loadImport($schema, $childNode);
                         break;
                     case 'element':
@@ -1114,6 +1115,8 @@ class SchemaReader
 
         $base = urldecode($node->ownerDocument->documentURI);
         $file = UrlUtils::resolveRelativeUrl($base, $schemaLocation);
+        // dump([$file, $base, $schemaLocation, SchemaFileUtils::cacheFile($namespace, $file)]);
+        $file = SchemaFileUtils::cacheFile($namespace, $file);
 
         if (isset($this->loadedFiles[$file])) {
             $schema->addSchema($this->loadedFiles[$file]);
@@ -1261,7 +1264,6 @@ class SchemaReader
         }
 
         $this->setLoadedSchemaFromElement($node, $rootSchema);
-
         $callbacks = $this->schemaNode($rootSchema, $node);
 
         foreach ($callbacks as $callback) {
@@ -1293,7 +1295,6 @@ class SchemaReader
     public function readFile(string $file): Schema
     {
         $xml = $this->getDOM($file);
-
         return $this->readNode($xml->documentElement, $file);
     }
 
