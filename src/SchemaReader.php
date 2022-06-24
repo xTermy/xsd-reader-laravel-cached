@@ -275,7 +275,7 @@ class SchemaReader
                         $callback = $this->loadAttributeGroup($schema, $childNode);
                         break;
                     case 'include':
-                    case 'import'://TODO
+                    case 'import':
                         $callback = $this->loadImport($schema, $childNode);
                         break;
                     case 'element':
@@ -1115,7 +1115,7 @@ class SchemaReader
 
         $base = urldecode($node->ownerDocument->documentURI);
         $file = UrlUtils::resolveRelativeUrl($base, $schemaLocation);
-        // dump([$file, $base, $schemaLocation, SchemaFileUtils::cacheFile($namespace, $file)]);
+
         $file = SchemaFileUtils::cacheFile($namespace, $file);
 
         if (isset($this->loadedFiles[$file])) {
@@ -1294,6 +1294,7 @@ class SchemaReader
      */
     public function readFile(string $file): Schema
     {
+        $file = SchemaFileUtils::cacheFile('', $file);
         $xml = $this->getDOM($file);
         return $this->readNode($xml->documentElement, $file);
     }
