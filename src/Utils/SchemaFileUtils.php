@@ -11,6 +11,7 @@ class SchemaFileUtils
 {
     public static function cacheFile($namespace, $file): string
     {
+        // $file = explode('.xsd', $file, 2)[0].'.xsd';
         $cached = self::getCachedFile($namespace, $file);
         if(!$cached) {
             $fileCont = file_get_contents($file);
