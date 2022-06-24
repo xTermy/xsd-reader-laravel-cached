@@ -1,5 +1,5 @@
 {
-    "name" : "goetas-webservices/xsd-reader",
+    "name" : "stormcode/xsd-reader-laravel-cached",
     "description" : "Read any XML Schema (XSD) programmatically with PHP",
     "keywords" : [
         "xsd",
