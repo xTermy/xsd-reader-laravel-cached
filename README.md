@@ -15,7 +15,7 @@ Installation
 The recommended way to install the `xsd-reader` via [Composer](https://getcomposer.org/):
 
 ```bash
-composer require 'goetas-webservices/xsd-reader'
+composer require 'stormcode/xsd-reader-laravel-cached'
 ```
 
 Getting started
