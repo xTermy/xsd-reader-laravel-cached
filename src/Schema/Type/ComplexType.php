@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema\Type;
+namespace CollectHouse\XML\XSDReader\Schema\Type;
 
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementContainer;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementContainerTrait;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementContainer;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementContainerTrait;
 
 class ComplexType extends BaseComplexType implements ElementContainer
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
 /**
  * @group Restriction
@@ -32,7 +32,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('enumeration', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'enumeration' => [
@@ -71,7 +71,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('pattern', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'pattern' => [
@@ -106,7 +106,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('length', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'length' => [
@@ -142,7 +142,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('minMaxLength', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'minLength' => [
@@ -184,7 +184,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('minMaxInclusive', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'minInclusive' => [
@@ -226,7 +226,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('minMaxExclusive', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'minExclusive' => [
@@ -267,7 +267,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('fractionDigits', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'fractionDigits' => [
@@ -302,7 +302,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('totalDigits', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'totalDigits' => [
@@ -338,7 +338,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('totalFractionDigits', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'totalDigits' => [
@@ -379,7 +379,7 @@ class RestrictionsTest extends BaseTest
         $element = $schema->findElement('whiteSpace', 'http://www.example.com');
         $simpleType = $element->getType();
         $restriction = $simpleType->getRestriction();
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction', $restriction);
 
         $expectedChecks = [
             'whiteSpace' => [

@@ -2,42 +2,42 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader;
+namespace CollectHouse\XML\XSDReader;
 
 use Closure;
 use DOMDocument;
 use DOMElement;
 use DOMNode;
-use GoetasWebservices\XML\XSDReader\Documentation\DocumentationReader;
-use GoetasWebservices\XML\XSDReader\Documentation\StandardDocumentationReader;
-use GoetasWebservices\XML\XSDReader\Exception\IOException;
-use GoetasWebservices\XML\XSDReader\Exception\TypeException;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeContainer;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeDef;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeItem;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\Group as AttributeGroup;
-use GoetasWebservices\XML\XSDReader\Schema\Element\Element;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementContainer;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
-use GoetasWebservices\XML\XSDReader\Schema\Element\Group;
-use GoetasWebservices\XML\XSDReader\Schema\Element\GroupRef;
-use GoetasWebservices\XML\XSDReader\Schema\Element\InterfaceSetDefault;
-use GoetasWebservices\XML\XSDReader\Schema\Element\InterfaceSetMinMax;
-use GoetasWebservices\XML\XSDReader\Schema\Exception\TypeNotFoundException;
-use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Base;
-use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
-use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
-use GoetasWebservices\XML\XSDReader\Schema\Item;
-use GoetasWebservices\XML\XSDReader\Schema\Schema;
-use GoetasWebservices\XML\XSDReader\Schema\SchemaItem;
-use GoetasWebservices\XML\XSDReader\Schema\Type\BaseComplexType;
-use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
-use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
-use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
-use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
-use GoetasWebservices\XML\XSDReader\Utils\UrlUtils;
+use CollectHouse\XML\XSDReader\Documentation\DocumentationReader;
+use CollectHouse\XML\XSDReader\Documentation\StandardDocumentationReader;
+use CollectHouse\XML\XSDReader\Exception\IOException;
+use CollectHouse\XML\XSDReader\Exception\TypeException;
+use CollectHouse\XML\XSDReader\Schema\Attribute\Attribute;
+use CollectHouse\XML\XSDReader\Schema\Attribute\AttributeContainer;
+use CollectHouse\XML\XSDReader\Schema\Attribute\AttributeDef;
+use CollectHouse\XML\XSDReader\Schema\Attribute\AttributeItem;
+use CollectHouse\XML\XSDReader\Schema\Attribute\Group as AttributeGroup;
+use CollectHouse\XML\XSDReader\Schema\Element\Element;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementContainer;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementDef;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementRef;
+use CollectHouse\XML\XSDReader\Schema\Element\Group;
+use CollectHouse\XML\XSDReader\Schema\Element\GroupRef;
+use CollectHouse\XML\XSDReader\Schema\Element\InterfaceSetDefault;
+use CollectHouse\XML\XSDReader\Schema\Element\InterfaceSetMinMax;
+use CollectHouse\XML\XSDReader\Schema\Exception\TypeNotFoundException;
+use CollectHouse\XML\XSDReader\Schema\Inheritance\Base;
+use CollectHouse\XML\XSDReader\Schema\Inheritance\Extension;
+use CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction;
+use CollectHouse\XML\XSDReader\Schema\Item;
+use CollectHouse\XML\XSDReader\Schema\Schema;
+use CollectHouse\XML\XSDReader\Schema\SchemaItem;
+use CollectHouse\XML\XSDReader\Schema\Type\BaseComplexType;
+use CollectHouse\XML\XSDReader\Schema\Type\ComplexType;
+use CollectHouse\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
+use CollectHouse\XML\XSDReader\Schema\Type\SimpleType;
+use CollectHouse\XML\XSDReader\Schema\Type\Type;
+use CollectHouse\XML\XSDReader\Utils\UrlUtils;
 
 class SchemaReader
 {

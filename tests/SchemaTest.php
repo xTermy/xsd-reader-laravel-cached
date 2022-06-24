@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
-use GoetasWebservices\XML\XSDReader\Exception\IOException;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
-use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
-use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
+use CollectHouse\XML\XSDReader\Exception\IOException;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementDef;
+use CollectHouse\XML\XSDReader\Schema\Type\ComplexType;
+use CollectHouse\XML\XSDReader\Schema\Type\SimpleType;
 
 class SchemaTest extends BaseTest
 {
@@ -36,7 +36,7 @@ class SchemaTest extends BaseTest
     }
 
     /**
-     * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
+     * @throws \CollectHouse\XML\XSDReader\Exception\IOException
      */
     public function testErrorString()
     {
@@ -46,7 +46,7 @@ class SchemaTest extends BaseTest
     }
 
     /**
-     * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
+     * @throws \CollectHouse\XML\XSDReader\Exception\IOException
      */
     public function testErrorFile()
     {
@@ -59,7 +59,7 @@ class SchemaTest extends BaseTest
     {
         $schema = $this->reader->readString('<xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>');
 
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Schema', $schema);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Schema', $schema);
         $this->assertEquals('http://www.example.com', $schema->getTargetNamespace());
 
         $schemas = $schema->getSchemas();
@@ -85,7 +85,7 @@ class SchemaTest extends BaseTest
     {
         $schema = $this->reader->readString('<xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>');
 
-        $this->expectException('GoetasWebservices\XML\XSDReader\Schema\Exception\TypeNotFoundException');
+        $this->expectException('CollectHouse\XML\XSDReader\Schema\Exception\TypeNotFoundException');
         $schema->$find('foo');
     }
 
@@ -104,20 +104,20 @@ class SchemaTest extends BaseTest
             </xs:schema>');
 
         $this->assertCount(1, $schema->getTypes());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType', $schema->findType('myType', 'http://www.example.com'));
-        //$this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType', $schema->findType('myType'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Type\ComplexType', $schema->findType('myType', 'http://www.example.com'));
+        //$this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Type\ComplexType', $schema->findType('myType'));
 
         $this->assertCount(1, $schema->getElements());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $schema->findElement('myElement', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $schema->findElement('myElement', 'http://www.example.com'));
 
         $this->assertCount(1, $schema->getGroups());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\Group', $schema->findGroup('myGroup', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\Group', $schema->findGroup('myGroup', 'http://www.example.com'));
 
         $this->assertCount(1, $schema->getAttributeGroups());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Attribute\Group', $schema->findAttributeGroup('myAttributeGroup', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Attribute\Group', $schema->findAttributeGroup('myAttributeGroup', 'http://www.example.com'));
 
         $this->assertCount(1, $schema->getAttributes());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeDef', $schema->findAttribute('myAttribute', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Attribute\AttributeDef', $schema->findAttribute('myAttribute', 'http://www.example.com'));
     }
 
     public function testMultipleSchemasInSameFile()
@@ -138,10 +138,10 @@ class SchemaTest extends BaseTest
         );
 
         $this->assertCount(1, $schema1->getTypes());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType', $schema1->findType('myType', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Type\ComplexType', $schema1->findType('myType', 'http://www.example.com'));
 
         $this->assertCount(1, $schema1->getElements());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $schema1->findElement('myElement', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $schema1->findElement('myElement', 'http://www.example.com'));
 
         //Now use a second schema which imports from the first one, and is in the SAME file
         $schema2 = $this->reader->readString('
@@ -155,7 +155,7 @@ class SchemaTest extends BaseTest
         $this->assertCount(0, $schema2->getTypes());
 
         $this->assertCount(1, $schema2->getElements());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $schema2->findElement('myElement2', 'http://www.example2.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $schema2->findElement('myElement2', 'http://www.example2.com'));
     }
 
     public function testMultipleSchemasInSameFileWithSameTargetNamespace()
@@ -170,10 +170,10 @@ class SchemaTest extends BaseTest
         );
 
         $this->assertCount(1, $schema1->getTypes());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType', $schema1->findType('myType', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Type\ComplexType', $schema1->findType('myType', 'http://www.example.com'));
 
         $this->assertCount(1, $schema1->getElements());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $schema1->findElement('myElement', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $schema1->findElement('myElement', 'http://www.example.com'));
 
         //Now use a second schema which uses the same targetNamespace
         $schema2 = $this->reader->readString('
@@ -188,11 +188,11 @@ class SchemaTest extends BaseTest
 
         $this->assertCount(0, $schema2->getTypes());
         $this->assertCount(1, $schema2->getElements());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $schema2->findElement('myElement2', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $schema2->findElement('myElement2', 'http://www.example.com'));
 
         $this->assertCount(1, $schema1->getTypes());
         $this->assertCount(1, $schema2->getElements());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $schema1->findElement('myElement2', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $schema1->findElement('myElement2', 'http://www.example.com'));
     }
 
     public function testGroupRefInType()
@@ -213,7 +213,7 @@ class SchemaTest extends BaseTest
 
         $this->assertCount(1, $schema1->getGroups());
         $group = $schema1->findGroup('myGroup', 'http://www.example.com');
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\Group', $group);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\Group', $group);
 
         $this->assertCount(1, $schema1->getElements());
 
@@ -222,12 +222,12 @@ class SchemaTest extends BaseTest
          * @var $type      ComplexType
          */
         $element = $schema1->findElement('myElement', 'http://www.example.com');
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef', $element);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\ElementDef', $element);
 
         $type = $element->getType();
         $this->assertCount(1, $type->getElements());
 
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Element\GroupRef', $type->getElements()[0]);
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Element\GroupRef', $type->getElements()[0]);
         $this->assertEquals($group->getElements(), $type->getElements()[0]->getElements());
     }
 

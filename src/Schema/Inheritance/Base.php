@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema\Inheritance;
+namespace CollectHouse\XML\XSDReader\Schema\Inheritance;
 
-use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
+use CollectHouse\XML\XSDReader\Schema\Type\Type;
 
 abstract class Base
 {

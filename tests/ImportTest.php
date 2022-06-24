@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeItem;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
-use GoetasWebservices\XML\XSDReader\Schema\Schema;
+use CollectHouse\XML\XSDReader\Schema\Attribute\AttributeItem;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementDef;
+use CollectHouse\XML\XSDReader\Schema\Schema;
 
 class ImportTest extends BaseTest
 {

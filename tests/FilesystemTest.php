@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
 class FilesystemTest extends BaseTest
 {
@@ -22,6 +22,6 @@ class FilesystemTest extends BaseTest
         $schema = $this->reader->readFile($schemaXsd);
 
         $this->assertCount(1, $schema->getTypes());
-        $this->assertInstanceOf('GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType', $schema->findType('myType', 'http://www.example.com'));
+        $this->assertInstanceOf('CollectHouse\XML\XSDReader\Schema\Type\ComplexType', $schema->findType('myType', 'http://www.example.com'));
     }
 }

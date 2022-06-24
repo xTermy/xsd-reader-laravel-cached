@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema;
+namespace CollectHouse\XML\XSDReader\Schema;
 
 abstract class AbstractNamedGroupItem
 {

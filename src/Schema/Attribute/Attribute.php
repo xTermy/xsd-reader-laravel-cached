@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema\Attribute;
+namespace CollectHouse\XML\XSDReader\Schema\Attribute;
 
 class Attribute extends AbstractAttributeItem implements AttributeSingle
 {

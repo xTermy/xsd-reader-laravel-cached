@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema\Attribute;
+namespace CollectHouse\XML\XSDReader\Schema\Attribute;
 
-use GoetasWebservices\XML\XSDReader\Schema\AbstractNamedGroupItem;
+use CollectHouse\XML\XSDReader\Schema\AbstractNamedGroupItem;
 
 class Group extends AbstractNamedGroupItem implements AttributeItem, AttributeContainer
 {

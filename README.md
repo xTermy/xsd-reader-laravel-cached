@@ -22,12 +22,12 @@ Getting started
 ---------------
 
 ```php
-use GoetasWebservices\XML\XSDReader\SchemaReader;
+use CollectHouse\XML\XSDReader\SchemaReader;
 
 $reader = new SchemaReader();
 $schema = $reader->readFile("http://www.example.com/exaple.xsd");
 
-// $schema is instance of GoetasWebservices\XML\XSDReader\Schema\Schema;
+// $schema is instance of CollectHouse\XML\XSDReader\Schema\Schema;
 
 // Now you can navigate the entire schema structure
 

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema;
+namespace CollectHouse\XML\XSDReader\Schema;
 
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeDef;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\AttributeItem;
-use GoetasWebservices\XML\XSDReader\Schema\Attribute\Group as AttributeGroup;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
-use GoetasWebservices\XML\XSDReader\Schema\Element\Group;
-use GoetasWebservices\XML\XSDReader\Schema\Exception\SchemaException;
-use GoetasWebservices\XML\XSDReader\Schema\Exception\TypeNotFoundException;
-use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
+use CollectHouse\XML\XSDReader\Schema\Attribute\AttributeDef;
+use CollectHouse\XML\XSDReader\Schema\Attribute\AttributeItem;
+use CollectHouse\XML\XSDReader\Schema\Attribute\Group as AttributeGroup;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementDef;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementItem;
+use CollectHouse\XML\XSDReader\Schema\Element\Group;
+use CollectHouse\XML\XSDReader\Schema\Exception\SchemaException;
+use CollectHouse\XML\XSDReader\Schema\Exception\TypeNotFoundException;
+use CollectHouse\XML\XSDReader\Schema\Type\Type;
 
 class Schema
 {
@@ -153,7 +153,7 @@ class Schema
     protected $doc;
 
     /**
-     * @var \GoetasWebservices\XML\XSDReader\Schema\SchemaItem[]
+     * @var \CollectHouse\XML\XSDReader\Schema\SchemaItem[]
      */
     protected $typeCache = [];
 

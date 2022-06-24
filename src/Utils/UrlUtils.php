@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Utils;
+namespace CollectHouse\XML\XSDReader\Utils;
 
 class UrlUtils
 {

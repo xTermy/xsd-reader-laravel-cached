@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema\Type;
+namespace CollectHouse\XML\XSDReader\Schema\Type;
 
-use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Base;
-use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
-use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
-use GoetasWebservices\XML\XSDReader\Schema\Schema;
-use GoetasWebservices\XML\XSDReader\Schema\SchemaItem;
-use GoetasWebservices\XML\XSDReader\Schema\SchemaItemTrait;
+use CollectHouse\XML\XSDReader\Schema\Inheritance\Base;
+use CollectHouse\XML\XSDReader\Schema\Inheritance\Extension;
+use CollectHouse\XML\XSDReader\Schema\Inheritance\Restriction;
+use CollectHouse\XML\XSDReader\Schema\Schema;
+use CollectHouse\XML\XSDReader\Schema\SchemaItem;
+use CollectHouse\XML\XSDReader\Schema\SchemaItemTrait;
 
 abstract class Type implements SchemaItem
 {

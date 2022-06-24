@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests\Documentation;
+namespace CollectHouse\XML\XSDReader\Tests\Documentation;
 
-use GoetasWebservices\XML\XSDReader\Documentation\StandardDocumentationReader;
+use CollectHouse\XML\XSDReader\Documentation\StandardDocumentationReader;
 use PHPUnit\Framework\TestCase;
 
 class StandardDocumentationReaderTest extends TestCase

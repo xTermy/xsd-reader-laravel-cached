@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
-use GoetasWebservices\XML\XSDReader\Schema\Element\Element;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
-use GoetasWebservices\XML\XSDReader\Schema\Schema;
-use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
+use CollectHouse\XML\XSDReader\Schema\Element\Element;
+use CollectHouse\XML\XSDReader\Schema\Element\ElementRef;
+use CollectHouse\XML\XSDReader\Schema\Schema;
+use CollectHouse\XML\XSDReader\Schema\Type\ComplexType;
 
 class LocalTest extends BaseTest
 {

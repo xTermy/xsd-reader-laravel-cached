@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
-use GoetasWebservices\XML\XSDReader\SchemaReader;
+use CollectHouse\XML\XSDReader\SchemaReader;
 use PHPUnit\Framework\TestCase;
 
 abstract class BaseTest extends TestCase

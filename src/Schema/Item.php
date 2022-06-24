@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Schema;
+namespace CollectHouse\XML\XSDReader\Schema;
 
-use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
+use CollectHouse\XML\XSDReader\Schema\Type\Type;
 
 abstract class Item implements SchemaItem
 {

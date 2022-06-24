@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GoetasWebservices\XML\XSDReader\Tests;
+namespace CollectHouse\XML\XSDReader\Tests;
 
-use GoetasWebservices\XML\XSDReader\Utils\UrlUtils;
+use CollectHouse\XML\XSDReader\Utils\UrlUtils;
 
 class UrlUtilsTest extends BaseTest
 {
