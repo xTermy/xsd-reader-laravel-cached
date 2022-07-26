@@ -45,7 +45,10 @@ class SchemaFileUtils
 
     private static function downloadFile($fileUrl, $filepath) 
     {
-        $out = file_get_contents($fileUrl);
+        if(!str_contains($fileUrl, 'gov.pl/') && !str_contains($fileUrl, 'w3.org/')) {
+            throw new \Exception('Niedozwolony adres pliku xsd');
+        }
+        $out = file_get_contents($fileUrl, false, stream_context_create(["ssl" => ["verify_peer" => false, "verify_peer_name" => false]]));
         $finfo = new \finfo(FILEINFO_MIME);
         if(!str_contains($finfo->buffer($out), 'text/xml')) {
             throw new \Exception('Zły mimetype pliku schematu');
