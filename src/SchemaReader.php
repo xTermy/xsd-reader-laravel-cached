@@ -1292,9 +1292,9 @@ class SchemaReader
     /**
      * @throws IOException
      */
-    public function readFile(string $file): Schema
+    public function readFile(string $file, string $namespace): Schema
     {
-        $file = SchemaFileUtils::cacheFile('', $file);
+        $file = SchemaFileUtils::cacheFile($namespace, $file);
         $xml = $this->getDOM($file);
         return $this->readNode($xml->documentElement, $file);
     }

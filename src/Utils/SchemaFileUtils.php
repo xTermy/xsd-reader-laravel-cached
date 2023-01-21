@@ -35,15 +35,15 @@ class SchemaFileUtils
         return str_replace(
             [
                 ' ',
-            ], 
+            ],
             [
                 '',
-            ], 
+            ],
             $url
         );
     }
 
-    private static function downloadFile($fileUrl, $filepath) 
+    private static function downloadFile($fileUrl, $filepath)
     {
         if(!str_contains($fileUrl, 'gov.pl/') && !str_contains($fileUrl, 'w3.org/')) {
             throw new \Exception('Niedozwolony adres pliku xsd');
@@ -60,7 +60,11 @@ class SchemaFileUtils
 
     public static function getCachedFile($namespace, $file): string | bool
     {
-        $schemas = SchemaCache::where('schema_download_uri', $file)->get();
+        if($file !== '') {
+            $schemas = SchemaCache::where('schema_download_uri', $file)->get();
+        } else {
+            $schemas = SchemaCache::where('schema_namespace', $namespace)->get();
+        }
         if($schemas->count() > 0) {
             return $schemas->first()->schema_path;
         }
